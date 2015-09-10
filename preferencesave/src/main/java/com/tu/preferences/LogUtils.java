@@ -1,7 +1,8 @@
 package com.tu.preferences;
 
-import android.support.v7.appcompat.BuildConfig;
 import android.util.Log;
+
+import com.tu.preference.BuildConfig;
 
 
 /**
