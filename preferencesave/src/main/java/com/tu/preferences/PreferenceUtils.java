@@ -25,7 +25,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, String value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putString(key, value).commit();
+        return sp.edit().putString(key, value).apply();
     }
 
     public static String getValue(Context context, String key, String defValue) {
@@ -35,7 +35,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, float value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putFloat(key, value).commit();
+        return sp.edit().putFloat(key, value).apply();
     }
 
     public static float getValue(Context context, String key, float defValue) {
@@ -45,7 +45,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, double value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putLong(key, Double.doubleToLongBits(value)).commit();
+        return sp.edit().putLong(key, Double.doubleToLongBits(value)).apply();
     }
 
     public static double getValue(Context context, String key, double defValue) {
@@ -63,7 +63,7 @@ public class PreferenceUtils {
      */
     public static boolean setValue(Context context, String name, String key, String value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putString(key, value).commit();
+        return sp.edit().putString(key, value).apply();
     }
 
     public static String getValue(Context context, String name, String key, String defValue) {
@@ -73,7 +73,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String name, String key, float value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putFloat(key, value).commit();
+        return sp.edit().putFloat(key, value).apply();
     }
 
     public static float getValue(Context context, String name, String key, float defValue) {
@@ -83,7 +83,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, boolean value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putBoolean(key, value).commit();
+        return sp.edit().putBoolean(key, value).apply();
     }
 
     public static boolean getValue(Context context, String key, boolean defValue) {
@@ -93,7 +93,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String name, String key, boolean value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putBoolean(key, value).commit();
+        return sp.edit().putBoolean(key, value).apply();
     }
 
     public static boolean getValue(Context context, String name, String key, boolean defValue) {
@@ -103,7 +103,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String name, String key, int value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putInt(key, value).commit();
+        return sp.edit().putInt(key, value).apply();
     }
 
     public static int getValue(Context context, String name, String key, int defValue) {
@@ -113,7 +113,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, int value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putInt(key, value).commit();
+        return sp.edit().putInt(key, value).apply();
     }
 
     public static int getValue(Context context, String key, int defValue) {
@@ -123,7 +123,7 @@ public class PreferenceUtils {
 
     public static boolean setValue(Context context, String key, long value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putLong(key, value).commit();
+        return sp.edit().putLong(key, value).apply();
     }
 
     public static long getValue(Context context, String key, long defValue) {
@@ -217,7 +217,7 @@ public class PreferenceUtils {
             }
         }
 
-        return editor.commit();
+        return editor.apply();
     }
 
     /**
@@ -374,12 +374,12 @@ public class PreferenceUtils {
 
     public static void clearSettings(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        sp.edit().clear().commit();
+        sp.edit().clear().apply();
     }
 
     public static void clearSettings(Context context, String name) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        sp.edit().clear().commit();
+        sp.edit().clear().apply();
     }
 
     /**
