@@ -23,9 +23,9 @@ public class PreferenceUtils {
     private PreferenceUtils() {
     }
 
-    public static boolean setValue(Context context, String key, String value) {
+    public static void setValue(Context context, String key, String value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putString(key, value).apply();
+        sp.edit().putString(key, value).apply();
     }
 
     public static String getValue(Context context, String key, String defValue) {
@@ -33,9 +33,9 @@ public class PreferenceUtils {
         return sp.getString(key, defValue);
     }
 
-    public static boolean setValue(Context context, String key, float value) {
+    public static void setValue(Context context, String key, float value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putFloat(key, value).apply();
+        sp.edit().putFloat(key, value).apply();
     }
 
     public static float getValue(Context context, String key, float defValue) {
@@ -43,9 +43,9 @@ public class PreferenceUtils {
         return sp.getFloat(key, defValue);
     }
 
-    public static boolean setValue(Context context, String key, double value) {
+    public static void setValue(Context context, String key, double value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putLong(key, Double.doubleToLongBits(value)).apply();
+        sp.edit().putLong(key, Double.doubleToLongBits(value)).apply();
     }
 
     public static double getValue(Context context, String key, double defValue) {
@@ -61,9 +61,9 @@ public class PreferenceUtils {
      * @param value
      * @return
      */
-    public static boolean setValue(Context context, String name, String key, String value) {
+    public static void setValue(Context context, String name, String key, String value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putString(key, value).apply();
+        sp.edit().putString(key, value).apply();
     }
 
     public static String getValue(Context context, String name, String key, String defValue) {
@@ -71,9 +71,9 @@ public class PreferenceUtils {
         return sp.getString(key, defValue);
     }
 
-    public static boolean setValue(Context context, String name, String key, float value) {
+    public static void setValue(Context context, String name, String key, float value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putFloat(key, value).apply();
+        sp.edit().putFloat(key, value).apply();
     }
 
     public static float getValue(Context context, String name, String key, float defValue) {
@@ -81,9 +81,9 @@ public class PreferenceUtils {
         return sp.getFloat(key, defValue);
     }
 
-    public static boolean setValue(Context context, String key, boolean value) {
+    public static void setValue(Context context, String key, boolean value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putBoolean(key, value).apply();
+        sp.edit().putBoolean(key, value).apply();
     }
 
     public static boolean getValue(Context context, String key, boolean defValue) {
@@ -91,9 +91,9 @@ public class PreferenceUtils {
         return sp.getBoolean(key, defValue);
     }
 
-    public static boolean setValue(Context context, String name, String key, boolean value) {
+    public static void setValue(Context context, String name, String key, boolean value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putBoolean(key, value).apply();
+        sp.edit().putBoolean(key, value).apply();
     }
 
     public static boolean getValue(Context context, String name, String key, boolean defValue) {
@@ -101,9 +101,9 @@ public class PreferenceUtils {
         return sp.getBoolean(key, defValue);
     }
 
-    public static boolean setValue(Context context, String name, String key, int value) {
+    public static void setValue(Context context, String name, String key, int value) {
         SharedPreferences sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
-        return sp.edit().putInt(key, value).apply();
+        sp.edit().putInt(key, value).apply();
     }
 
     public static int getValue(Context context, String name, String key, int defValue) {
@@ -111,9 +111,9 @@ public class PreferenceUtils {
         return sp.getInt(key, defValue);
     }
 
-    public static boolean setValue(Context context, String key, int value) {
+    public static void setValue(Context context, String key, int value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putInt(key, value).apply();
+        sp.edit().putInt(key, value).apply();
     }
 
     public static int getValue(Context context, String key, int defValue) {
@@ -121,9 +121,9 @@ public class PreferenceUtils {
         return sp.getInt(key, defValue);
     }
 
-    public static boolean setValue(Context context, String key, long value) {
+    public static void setValue(Context context, String key, long value) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        return sp.edit().putLong(key, value).apply();
+        sp.edit().putLong(key, value).apply();
     }
 
     public static long getValue(Context context, String key, long defValue) {
@@ -148,7 +148,7 @@ public class PreferenceUtils {
      * @param o
      * @return
      */
-    public static boolean setObject(Context context, Object o) {
+    public static void setObject(Context context, Object o) {
         // 获取所有成员
         Field[] fields = o.getClass().getDeclaredFields();
         SharedPreferences sp = context.getSharedPreferences(o.getClass().getName(), Context.MODE_PRIVATE);
@@ -217,7 +217,7 @@ public class PreferenceUtils {
             }
         }
 
-        return editor.apply();
+        editor.apply();
     }
 
     /**
